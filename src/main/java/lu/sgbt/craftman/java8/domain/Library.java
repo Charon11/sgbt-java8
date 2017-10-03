@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Year;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -37,45 +38,19 @@ public class Library {
         List<Book> result = new ArrayList<>();
         for (User user : users)
             for (Book book : books)
-                if (book.getPublicationDate().equals(user.getBirthday()))
+                if (this.isInYear(book.getPublishYear(),user.getBirthday()))
                     result.add(book);
 
         return result;
     }
 
-    public List<Book> getBookOnBirthdayLambda1(List<User> users) {
-        return books.stream().filter(book -> users.stream().map(user -> user.getBirthday()).collect(Collectors.toList())
-                .contains(book.getPublicationDate())).collect(Collectors.toList());
+
+    public List<Book> getBookOnBirthdayLambda(List<User> users) {
+        return users.stream().flatMap(user -> books.stream().filter(book -> this.isInYear(book.getPublishYear(),user.getBirthday()))).collect(Collectors.toList());
     }
 
-    public List<Book> getBookOnBirthdayLambda2(List<User> users) {
-        return users.stream().flatMap(user -> books.stream().filter(book -> book.getPublicationDate().equals(user.getBirthday()))).collect(Collectors.toList());
-    }
 
-    public List<BirthdayBook> getMyBirthdayBooks(User user) {
-        List<BirthdayBook> result = new ArrayList<>();
-        for (Book book : books) {
-            if (book.getPublicationDate().equals(user.getBirthday())) {
-                result.add(new BirthdayBook(
-                        user.getLastname(),
-                        user.getFirstname(),
-                        book.getTitle(),
-                        book.getAuthor()));
-            }
-        }
-        return result;
-    }
-
-    public List<BirthdayBook> getMyBirthdayBooksLambda(User user) {
-        return books.stream().filter(b -> b.getPublicationDate().equals(user.getBirthday()))
-                .map(book -> new BirthdayBook(
-                        user.getLastname(),
-                        user.getFirstname(),
-                        book.getTitle(),
-                        book.getAuthor())).collect(Collectors.toList());
-    }
-
-    public Map<Author, List<Book>> groupByAuthorOld(List<Book> books) {
+    public Map<Author, List<Book>> groupByAuthorOld() {
         Map<Author, List<Book>> authorBooks = new HashMap<>();
         for (Book book : books) {
             if (authorBooks.containsKey(book.getAuthor()))
@@ -89,18 +64,18 @@ public class Library {
         return authorBooks;
     }
 
-    public Map<Author, List<Book>> groupByAuthorLambda(List<Book> books) {
+    public Map<Author, List<Book>> groupByAuthorLambda() {
         return books.stream().collect(Collectors.groupingBy(Book::getAuthor));
     }
 
-    public Map<Author, List<String>> groupTitleByAuthorLambda(List<Book> books) {
+    public Map<Author, List<String>> groupTitleByAuthorLambda() {
         return books.stream().collect(Collectors.groupingBy(Book::getAuthor, Collectors.mapping(Book::getTitle, Collectors.toList())));
     }
 
     public String getListOfTitleOld(Author author) {
         String result = "";
         for (Book book : this.getFromAuthorOld(author)) {
-            result += book.getTitle();
+            result += book.getTitle() + ",";
         }
         return result.substring(0, result.lastIndexOf(",") - 1);
     }
@@ -118,11 +93,21 @@ public class Library {
     }
 
     public String getListOfTitleLambda2(Author author) {
-        return this.getFromAuthorLambda(author).stream().reduce("", (s, book) -> s += book.getTitle(), (s, s2) -> s + "," + s2);
+        return this.getFromAuthorLambda(author).stream().reduce("", (s, book) -> s += ("," + book.getTitle()), (s, s2) -> s + s2);
     }
 
     public String getListOfTitleLambda3(Author author) {
         return this.getFromAuthorLambda(author).stream().map(book -> book.getTitle()).reduce((s, s2) -> s + "," + s2).orElse("");
+    }
+
+    private boolean isInYear(String year, Date date){
+        return Year.parse(year).getValue() == this.getYear(date);
+    }
+
+    private int getYear(Date date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        return calendar.get(Calendar.YEAR);
     }
 
 

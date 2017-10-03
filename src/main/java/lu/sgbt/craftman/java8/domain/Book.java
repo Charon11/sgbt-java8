@@ -19,6 +19,6 @@ public class Book {
     private String title;
     private String reference;
     private Author author;
-    private Date publicationDate;
+    private String publishYear;
 
 }

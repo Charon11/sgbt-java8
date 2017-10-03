@@ -20,9 +20,6 @@ public class Users {
         ClassLoader classLoader = ClassLoader.getSystemClassLoader();
         File file = new File(classLoader.getResource(fileName).getFile());
 
-        //File is found
-        System.out.println("File Found : " + file.exists());
-
         //Read File Content
         String content = new String(Files.readAllBytes(file.toPath()));
         User[] users = new Gson().fromJson(content,User[].class);

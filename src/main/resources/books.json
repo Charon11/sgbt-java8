@@ -1,0 +1,155 @@
+[
+  {
+    "title": "The Lord of the Rings",
+    "reference": "ISBN:0618129022",
+    "author": {
+      "reference": "",
+      "name": "J. R. R. Tolkien"
+    },
+    "publishYear": "1994"
+  },
+  {
+    "title": "Harry Potter and the Philosopher's Stone",
+    "reference": "ISBN:9781855494985",
+    "author": {
+      "reference": "",
+      "name": "J. K. Rowling"
+    },
+    "publishYear": "1999"
+  },
+  {
+    "title": "Harry Potter and the chamber of secrets",
+    "reference": "ISBN:0747538484",
+    "author": {
+      "reference": "",
+      "name": "J. K. Rowling"
+    },
+    "publishYear": "1998"
+  },
+  {
+    "title": "Harry Potter and the prisoner of Azkaban",
+    "reference": "ISBN:9781551924809",
+    "author": {
+      "reference": "",
+      "name": "J. K. Rowling"
+    },
+    "publishYear": "2000"
+  },
+  {
+    "title": "Harry Potter and the goblet of fire",
+    "reference": "ISBN:9781594130038",
+    "author": {
+      "reference": "",
+      "name": "J. K. Rowling"
+    },
+    "publishYear": "2003"
+  },
+  {
+    "title": "Harry Potter and the Order of the Phoenix",
+    "reference": "ISBN:9780439358064",
+    "author": {
+      "reference": "",
+      "name": "J. K. Rowling"
+    },
+    "publishYear": "2003"
+  },
+  {
+    "title": "Harry Potter and the Half-Blood Prince",
+    "reference": "ISBN:9780747581109",
+    "author": {
+      "reference": "",
+      "name": "J. K. Rowling"
+    },
+    "publishYear": "2005"
+  },
+  {
+    "title": "Harry Potter and the Deathly Hallows",
+    "reference": "ISBN:9780747591061",
+    "author": {
+      "reference": "",
+      "name": "J. K. Rowling"
+    },
+    "publishYear": "2007"
+  },
+  {
+    "title": "A Storm of Swords",
+    "reference": "ISBN:9780553381702",
+    "author": {
+      "reference": "",
+      "name": "George R. R. Martin"
+    },
+    "publishYear": "2002"
+  },
+  {
+    "title": "La structure sociale de la Suisse",
+    "reference": "ISBN:9783303001233",
+    "author": {
+      "reference": "",
+      "name": "René Levy"
+    },
+    "publishYear": "1995"
+  },
+  {
+    "title": "Two Sides of A Planet",
+    "reference": "ISBN:9781419648854",
+    "author": {
+      "reference": "",
+      "name": "Leonid Pereplyotchik"
+    },
+    "publishYear": "2007"
+  },
+  {
+    "title": "Dying of the light",
+    "reference": "ISBN:9780671228613",
+    "author": {
+      "reference": "",
+      "name": "George R. R. Martin"
+    },
+    "publishYear": "1977"
+  },
+  {
+    "title": "A Clash of Kings",
+    "reference": "ISBN:9781892065315",
+    "author": {
+      "reference": "",
+      "name": "George R. R. Martin"
+    },
+    "publishYear": "2004"
+  },
+  {
+    "title": "Windhaven",
+    "reference": "ISBN:9780671252779",
+    "author": {
+      "reference": "",
+      "name": "George R. R. Martin"
+    },
+    "publishYear": "1980"
+  },
+  {
+    "title": "Quatre-vingt-treize",
+    "reference": "ISBN:9782211057035",
+    "author": {
+      "reference": "",
+      "name": "Victor Hugo"
+    },
+    "publishYear": "1980"
+  },
+  {
+    "title": "Les misérables",
+    "reference": "ISBN:9780486457895",
+    "author": {
+      "reference": "",
+      "name": "Victor Hugo"
+    },
+    "publishYear": "2007"
+  },
+  {
+    "title": "Hernani",
+    "reference": "ISBN:9782070386574",
+    "author": {
+      "reference": "",
+      "name": "Victor Hugo"
+    },
+    "publishYear": "1995"
+  }
+]
