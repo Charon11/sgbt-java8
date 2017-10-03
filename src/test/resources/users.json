@@ -1,0 +1,32 @@
+[
+  {
+    "lastname" : "Chardin",
+    "firstname" : "Renaud",
+    "birthday" : "603885073"
+  },
+  {
+    "lastname" : "Tramier",
+    "firstname" : "Virginie",
+    "birthday" : "577097473"
+  },
+  {
+    "lastname" : "Erkoc",
+    "firstname" : "Ebru",
+    "birthday" : "739702273"
+  },
+  {
+    "lastname" : "Maujol",
+    "firstname" : "Julien",
+    "birthday" : "361011073"
+  },
+  {
+    "lastname" : "Bauche",
+    "firstname" : "Frapois",
+    "birthday" : "595158673"
+  },
+  {
+    "lastname" : "Anciaux",
+    "firstname" : "Arnaud",
+    "birthday" : "697715473"
+  }
+]
