@@ -80,8 +80,11 @@ public class Library {
         for (Book book : books) {
             if (authorBooks.containsKey(book.getAuthor()))
                 authorBooks.get(book.getAuthor()).add(book);
-            else
-                authorBooks.put(book.getAuthor(), Arrays.asList(book));
+            else {
+                List<Book> bookList = new ArrayList<>();
+                bookList.add(book);
+                authorBooks.put(book.getAuthor(), bookList);
+            }
         }
         return authorBooks;
     }

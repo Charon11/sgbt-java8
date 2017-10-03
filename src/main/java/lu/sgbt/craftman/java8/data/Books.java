@@ -33,6 +33,7 @@ public class Books extends RestProcess {
                         Map bookInfo = (Map) ((Entry)b).getValue();
                         Author author = new Author();
                         author.setName(((List<Map>) bookInfo.get("authors")).get(0).get("name").toString());
+                        author.setReference("");
                         result.add(new Book((String) bookInfo.get("title"),
                                 (String) ((Entry)b).getKey(),author, new Date()));
                     });
